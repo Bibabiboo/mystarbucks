@@ -1,0 +1,37 @@
+/* MOBILE AND TABLET */
+@media only screen and (max-width: 49.375em){
+    #nav-menu,
+    .content-text,
+    .footer-body,
+    .info-others{
+        display: none;
+    }
+
+    .language{
+        padding: 8px 24px 16px 24px;
+    }
+
+    .info-production{
+        font-size: 12px;
+        color: #382f2d;
+    }
+}
+
+/* PC */
+@media only screen and (min-width: 49.4375em){
+    #nav-mobile--menu,
+    .content--mobile,
+    .footer-body--mobile,
+    .info-others--mobile{
+        display: none;
+    }
+
+    .language{
+        padding: 0 24px;
+    }
+
+    .info-production{
+        font-size: 10px;
+        color: #666;
+    }
+}

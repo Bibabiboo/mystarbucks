@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/vi/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png" type="image/x-icon">
+    <title>Starbucks Tao Làm</title>
+
+    <style>
+
+        .loader {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333333;
+            transition: opacity 0.75s, visibility 0.75s;
+            animation: ChangeColor linear 4s infinite;
+        }
+
+        .loading {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border: 15px solid #00ffff;
+            border-radius: 50%;
+            border-color: #00ffff #00ffff transparent transparent;
+            animation: rotate1 linear 2s infinite;
+
+        }
+
+        .loading::before {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            bottom: 25px;
+            right: 25px;
+            border: 10px solid #00ffff;
+            border-radius: 50%;
+            border-color: #00ffff #00ffff transparent transparent;
+            animation: rotate2 linear 2s infinite;
+        }
+
+        .loading::after {
+            content: "";
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            bottom: 50px;
+            right: 50px;
+            border: 5px solid #00ffff;
+            border-radius: 50%;
+            border-color: #00ffff #00ffff transparent transparent;
+            animation: rotate1 linear 2s infinite;
+
+        }
+
+        .loader--hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @keyframes ChangeColor {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+
+            }
+        }
+        
+        @keyframes rotate1 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate2 {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-720deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="loader">
+        <div class="loading"></div>
+     </div>
+    
+    <div class="main">
+        <div id="decorate"></div>
+
+        <div id="header">
+            <div class="logo">
+                <img class="logo-starbucks" src="https://www.starbucks.vn/media/jlrf0uhs/logo_tcm89-366_w1024_n.png" alt="">
+            </div>
+            <a class="location-item" href="https://www.starbucks.vn/store-locator/">
+                <img class="logo-location" src="https://www.starbucks.vn/assets/images/map%20marker.svg"  alt="">
+                <span class="text-location">Tìm cửa hàng</span>
+            </a>
+        </div>
+        <!-- nav-pc -->
+        <div id="nav-menu">
+            <ul class="nav-list">
+                <!-- Ca Phe -->
+                <li>
+                    <a class="remove-underline nav-item-1" href="https://www.starbucks.vn/ca-phe/">
+                        CÀ PHÊ
+                        <div class="container-subnav">
+                            <div class="row-1">
+                                <div class="col-1">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/ca-phe/ca-phe-cua-chung-toi/">Cà phê của Chúng tôi</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/ca-phe-cua-chung-toi/format/whole-bean/">Cà phê Nguyên Hạt</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/ca-phe-cua-chung-toi/view-all-coffee/">Xem Tất cả các loại Cà phê</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/ca-phe/coffee-finder/">Tìm loại Cà phê Hoàn hảo của Bạn</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-3">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/ca-phe/espresso/">Espresso</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/espresso/thanh-phan/">Thành phần</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/espresso/thiet-bi-tot-nhat/">Thiết bị Tốt nhất</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/espresso/nhan-vien-pha-che-ca-phe/">Nhân viên Pha chế Cà phê</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-4">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/ca-phe/cach-pha-ca-phe/">Cách Pha Cà phê</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/cach-pha-ca-phe/coffee-press/">Coffee Press</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/cach-pha-ca-phe/pour-over/">Pour-Over</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/cach-pha-ca-phe/iced-pour-over/">Iced Pour-Over</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/cach-pha-ca-phe/coffee-brewer/">Coffee Brewer</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="row-2">
+                                <div class="col-5">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/ca-phe/tim-nguon-cung-ung-co-dao-duc/">Tìm nguồn Cung ứng có Đạo đức</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/tim-nguon-cung-ung-co-dao-duc/tim-nguon-cung-ung-ca-phe/">Cà phê được Vun trồng có Trách nhiệm</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/tim-nguon-cung-ung-co-dao-duc/chat-luong-ca-phe/">Chất lượng cà phê</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/tim-nguon-cung-ung-co-dao-duc/ho-tro-nong-dan/">Hỗ trợ Nông dân</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul>
+                                        <p class="make-color">Tìm hiểu Thêm</p>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/learn/dong-san-pham-ca-phe-rang/">Dòng sản phẩm Cà phê Rang Starbucks</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/learn/nhung-huong-vi-trong-coc-ca-phe-cua-ban/">Những hương vị trong Cốc cà phê của bạn</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/learn/cau-hoi-thuong-gap-ve-ca-phe/">Câu hỏi Thường Gặp về Cà phê</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row-3">
+                                <h3>Bạn đang tìm kiếm các loại Đồ uống Cà phê?</h3>
+                                <p>
+                                    <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-uong/">Thức ăn</a>
+                                </p>
+                            </div>
+                            <div class="background-img background-img-1">
+                                <div class="img-ca-phe">
+                                    <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/vang/">
+                                        <img src="https://www.starbucks.vn/media/gapffx4c/blonde_roast_coffee_tcm89-15926.jpg" alt="">
+                                        <p class="img-heading">Blonde Roast</p>
+                                        <p class="img-text">Nhẹ và ngọt dịu, loại cà phê rang qua hoàn hảo.</p>
+                                    </a>
+                                </div>
+                           </div>
+                        </div>
+                    </a>
+                </li>
+                <!-- Thuc Don -->
+                <li>
+                    <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/">
+                        THỰC ĐƠN
+                        <div class="container-subnav">
+                            <div class="row-1 margin-bottom-24px">
+                                <div class="col-1">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/thuc-don/thuc-an/">Thức ăn</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-an/banh/">Bánh</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-an/banh-muffin/">Bánh Muffin</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-an/banh-cookie/">Bánh cookie</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-an/banh-ngot/">Bánh Ngọt</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-an/banh-mi-sandwiches/">Bánh mì sandwiches</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/thuc-don/thuc-uong/">Thức uống</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-uong/thuc-uong-espresso/">Thức uống Espresso</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-uong/thuc-uong-voi-socola/">Thức uống với Sôcôla</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-uong/ca-phe-xay-frappuccino/">Cà phê Xay Frappuccino®</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-uong/kem-tron-frappuccino/">Kem Trộn Frappuccino®</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-uong/tra-pha/">Trà pha</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                            </div>   
+                            <div class="row-3">
+                                <h3>Bạn đang tìm kiếm Cà phê để thưởng thức tại Nhà?</h3>
+                                <p>
+                                    <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/learn/dong-san-pham-ca-phe-rang/">Tìm hiểu về Dòng sản phẩm cà phê rang Starbucks Roast</a>
+                                </p>
+                            </div>
+                            <div class="background-img background-img-2">
+                                <div class="img-ca-phe">
+                                    <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-an/">
+                                        <img src="	https://www.starbucks.vn/media/lwhnwlla/menu_blueberries_tcm89-16461.jpg" alt="">
+                                        <p class="img-heading">Đồ ăn Thực thụ, Cực Ngon</p>
+                                        <p class="img-text">Xem những lựa chọn món ăn mới trong cửa hàng của chúng tôi.</p>
+                                    </a>
+                                </div>
+                           </div>
+                        </div>
+                    </a>
+                </li>
+                <!-- Quan Ca Phe -->
+                <li>
+                    <a class="remove-underline" href="https://www.starbucks.vn/quan-ca-phe/">
+                        QUÁN CÀ PHÊ
+                        <div class="container-subnav">
+                            <div class="row-1 margin-bottom-24px">
+                                <div class="col-1">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/quan-ca-phe/chuong-trinh-chuyen-gia-ca-phe/">Chương trình Chuyên gia cà phê</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/quan-ca-phe/cong-dong-truc-tuyen/">Cộng đồng Trực tuyến</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-3">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/quan-ca-phe/thiet-ke-cua-hang/">Thiết kế Cửa hàng</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-4">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/quan-ca-phe/thuong-mai/">Sản phẩm</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/quan-ca-phe/thuong-mai/drinkware/">Dụng cụ uống</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/quan-ca-phe/thuong-mai/machines/">Dụng cụ pha chế</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/quan-ca-phe/thuong-mai/accessories/">Phụ kiện</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row-3 margin-bottom-24px">
+                                <h3>Bạn đang tìm kiếm Điều gì Khác?</h3>
+                                <p>
+                                    <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/thuc-uong/">Thức uống</a>
+                                </p>
+                            </div>
+                            <div class="background-img background-img-3">
+                                <div class="img-ca-phe">
+                                    <a class="remove-underline" href="https://www.starbucks.vn/quan-ca-phe/">
+                                        <img src="https://www.starbucks.vn/media/hagf4003/coffeehouse-teaser_tcm89-3864.jpg" alt="">
+                                        <p class="img-heading">Cà phê của chúng tôi đưa mọi người lại gần nhau</p>
+                                        <p class="img-text">Vui chơi, mơ giấc mơ lớn và kết nối với bạn bè.</p>
+                                    </a>
+                                </div>
+                           </div>
+                        </div>        
+                    </a>
+                </li>
+                <!-- Trach Nhiem -->
+                <li>
+                    <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/">
+                        TRÁCH NHIỆM
+                        <div class="container-subnav">
+                            <div class="row-1 margin-bottom-24px">
+                                <div class="col-1">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/trach-nhiem/tim-nguon-cung-ung-co-dao-duc/">Tìm nguồn Cung ứng có Đạo đức</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/tim-nguon-cung-ung-co-dao-duc/ho-tro-nong-dan/">Hỗ trợ Nông dân</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/tim-nguon-cung-ung-co-dao-duc/tim-nguon-cung-ung-ca-phe/">Tìm nguồn Cung ứng Cà phê</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/tim-nguon-cung-ung-co-dao-duc/tim-nguon-cung-ung-tra/">Tìm nguồn Cung ứng Trà</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/tim-nguon-cung-ung-co-dao-duc/tim-nguon-cung-ung-ca-cao/">Tìm nguồn Cung ứng Ca cao</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/trach-nhiem/moi-truong/">Môi trường</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/moi-truong/tai-che/">Tái chế</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/moi-truong/nang-luong/">Năng lượng</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/moi-truong/nuoc/">Nước</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/moi-truong/cong-trinh-xanh/">Công trình Xanh</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/moi-truong/bien-doi-khi-hau/">Biến đổi Khí hậu</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>   
+                            <div class="row-3 padding-bottom-12px">
+                                <h3>Bạn đang tìm kiếm Thông tin về Starbucks?</h3>
+                                <p>
+                                    <a class="remove-underline" href="#footer">Giới thiệu về Chúng tôi</a>
+                                </p>
+                            </div>
+                            <div class="background-img background-img-4">
+                                <div class="img-ca-phe">
+                                    <img src="https://www.starbucks.vn/media/ksrinkwr/responsibility-upsell-promo-image_tcm89-23593.jpg" alt="">
+                                    <p class="img-heading">Sự tham gia của Cộng đồng</p>
+                                    <p class="img-text">Chúng tôi khuyến khích cộng sự (nhân viên) cũng như khách hàng tham gia cộng đồng của họ.</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </a>
+                </li>
+                <!-- Ve Chung Toi -->
+                <li>
+                    <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/">
+                        VỀ CHÚNG TÔI
+                        <div class="container-subnav">
+                            <div class="row-1 margin-bottom-24px">
+                                <div class="col-1">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/ve-chung-toi/di-san/">Di sản</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/">Công ty</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/tuyen-bo-ve-su-menh/">Tuyên bố về Sứ mệnh</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/dao-duc-va-tuan-thu-trong-kinh-doanh/">Đạo đức và Tuân thủ trong Kinh doanh</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/su-da-dang-tai-starbucks/">Sự đa dạng tại Starbucks</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/">Chính sách Trực tuyến</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-3">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://www.starbucks.vn/ve-chung-toi/co-hoi-nghe-nghiep/">Cơ hội nghề nghiệp</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row-3 padding-bottom-12px">
+                                <h3>Bạn đang tìm kiếm Vị trí Cửa hàng?</h3>
+                                <p>
+                                    <a class="remove-underline" href="#footer">Dịch vụ Khách hàng</a>
+                                </p>
+                            </div>
+                            <div class="background-img background-img-5">
+                                <div class="img-ca-phe">
+                                    <img src="https://www.starbucks.vn/media/jl4nrlxy/teaser01_tcm89-3390.jpg" alt="">
+                                    <p class="img-heading">Một Loại Công ty Khác</p>
+                                    <p class="img-text">Chúng tôi khuyến khích cộng sự (nhân viên) cũng như khách hàng tham gia cộng đồng của họ.</p>
+                                </div>
+                            </div>
+                        </div>        
+                    </a>
+                </li>
+                <!-- The -->
+                <li>
+                    <a class="remove-underline" href="https://card.starbucks.vn/en/sign-in">
+                        THẺ
+                        <div class="container-subnav">
+                            <div class="row-1 margin-bottom-24px">
+                                <div class="col-1">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline opacity-1" href="https://card.starbucks.vn/en/">Quản Lý Tài Khoản</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://card.starbucks.vn/en/sign-in">Đăng nhập/Đăng ký tài khoản mới</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="#">Lịch sử giao dịch</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="#">Báo mất thẻ</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <p class="make-color">Thông Tin Khác</p>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://card.starbucks.vn/en/">Starbucks Rewards™</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/starbucks-rewards-terms-and-conditions/">Điều kiện và điều khoản chương trình</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/chi-nh-sa-ch-ba-o-ma-t-thong-tin/">Chính sách về quyền riêng tư</a>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/starbucks-rewards-faqs/">Câu hỏi thường gặp chương trình Starbucks Rewards™</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-3">
+                                    <ul>
+                                        <li class="remove-style-list">
+                                            <p class="make-color">Thẻ quà tặng điện tử</p>
+                                        </li>
+                                        <li class="remove-style-list">
+                                            <a class="remove-underline" href="https://card.starbucks.vn/en/landing-egift">Gửi thẻ quà tặng ngay</a>
+                                        </li>
+                                    </ul>    
+                                </div>
+                            </div>
+                            <div class="row-3 padding-bottom-12px">
+                                <h3>Đang tìm kiếm vị trí cửa hàng</h3>
+                                <p>
+                                    <a class="remove-underline" href="#footer">Bộ định vị Cửa hàng</a>
+                                </p>
+                            </div>
+                            <div class="background-img background-img-6">
+                                <div class="img-ca-phe">
+                                    <a class="remove-underline" href="https://card.starbucks.vn/en/sign-in">
+                                        <img src="https://www.starbucks.vn/media/wyldxria/card-teaser_tcm89-25200.jpg" alt="">
+                                        <p class="img-heading">Nhận ngôi sao điểm thưởng cho mỗi chi tiêu tại Starbucks.</p>
+                                        <p class="img-text">Đăng ký Starbucks Rewards™ ngay hôm nay.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>        
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- nav-mobile--menu -->
+        <div id="nav-mobile--menu">
+            <label for="nav-mobile-bars">
+                <i class="nav-menu--mobile fa-solid fa-bars"></i>
+            </label>
+            <a href="https://www.starbucks.vn/store-locator/">
+                <img class="logo-location" src="https://www.starbucks.vn/assets/images/map%20marker.svg"  alt="">
+            </a>
+        </div>
+        <input type="checkbox" class="nav-menu-checked" hidden name="" id="nav-mobile-bars">
+        <!-- nav-mobile--list -->
+        <div for="nav-mobile-bars" class="nav-mobile--list">
+            <div for="nav-mobile-bars" class="container-mobile">
+                <ul>
+                    <div class="col-second nav-col-1">
+                        <li class="remove-style-list">
+                            <a class="remove-underline" href="https://www.starbucks.vn/ca-phe/">CÀ PHÊ</a>
+                        </li>
+                        <li class="remove-style-list">
+                            <a class="remove-underline" href="https://www.starbucks.vn/quan-ca-phe/">QUÁN CÀ PHÊ</a>
+                        </li>
+                        <li class="remove-style-list">
+                            <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/">VỀ CHÚNG TÔI</a>
+                        </li>
+                    </div>
+                </ul>
+                <ul>
+                    <div class="col-second nav-col-2">
+                        <li class="remove-style-list">
+                            <a class="remove-underline" href="https://www.starbucks.vn/thuc-don/">THỰC ĐƠN</a>
+                        </li>
+                        <li class="remove-style-list">
+                            <a class="remove-underline" href="https://www.starbucks.vn/trach-nhiem/">TRÁCH NHIỆM</a>
+                        </li>
+                        <li class="remove-style-list">
+                            <a class="remove-underline" href="https://card.starbucks.vn/en/sign-in">THẺ</a>
+                        </li>
+                    </div>
+                </ul>
+                <div class="clear"></div>   
+            </div>
+        </div>
+
+        <div id="content-main">
+            <div class="content-img">
+                <img src="/asset/img/SUM2_P1_Green_Grape_1080x640_EN.jpg" alt="" class="img">
+            </div>
+            <!-- content-pc -->
+            <div class="content--pc">
+                <div class="content-text">
+                    <div class="content-left content-left-text">
+                        <h2 class="slogan">CÀ PHÊ ESPRESSO CỦA CHÚNG TÔI, LATTE CỦA BẠN</h2>
+                        <p class="text">Cà phê espresso đậm vị và bốc hơi sữa - ngon tuyệt hảo khi thưởng thức riêng hay khi thêm đường.</p>
+                        <a href="https://www.starbucks.vn/thuc-don/thuc-uong/" class="link-info">Hãy Thưởng Thức Ngay >></a>
+                    </div>
+                    <div class="content-right content-right-img">
+                            <a href="https://www.starbucks.vn/thuc-don/thuc-uong/"> 
+                                <img src="https://www.starbucks.vn/media/s5hlhw2z/our-espresso_tcm89-24616_w1024_n.png" alt="" class="img-link1">
+                            </a>
+                    </div>
+                </div>
+
+                <div class="content-text">
+                    <div class="content-left content-left-img">
+                        <a href="https://www.starbucks.vn/ve-chung-toi/co-hoi-nghe-nghiep/">
+                            <img src="https://www.starbucks.vn/media/2rbbcpzs/opportunity_tcm89-24617_w1024_n.png" alt="" class="img-link2">
+                        </a>
+                    </div>
+                    <div class="content-right">
+                        <div class="content-right-text">
+                            <h2 class="slogan">CƠ HỘI</h2>
+                            <p class="text">Không chỉ là nhân viên, mà còn là cộng sự.</p>
+                            <a href="https://www.starbucks.vn/ve-chung-toi/co-hoi-nghe-nghiep/" class="link-info">Tham gia cùng chúng tôi >></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                  
+            
+            <!-- content-mobile -->
+            <div class="content--mobile">
+                <div class="content-img--moble">
+                    <a href="https://www.starbucks.vn/thuc-don/thuc-uong/"> 
+                        <img src="https://www.starbucks.vn/media/s5hlhw2z/our-espresso_tcm89-24616_w1024_n.png" alt="" class="img-link1">
+                    </a>
+                </div>
+                <div class="content-text--mobile">
+                    <h2 class="slogan">CÀ PHÊ ESPRESSO CỦA CHÚNG TÔI, LATTE CỦA BẠN</h2>
+                    <p class="text">Cà phê espresso đậm vị và bốc hơi sữa - ngon tuyệt hảo khi thưởng thức riêng hay khi thêm đường.</p>
+                    <a href="https://www.starbucks.vn/thuc-don/thuc-uong/" class="link-info">Hãy Thưởng Thức Ngay >></a>
+                </div>
+            </div>
+
+            <div class="content--mobile">
+                <div class="content-img--moble">
+                    <a href="https://www.starbucks.vn/ve-chung-toi/co-hoi-nghe-nghiep/">
+                        <img src="https://www.starbucks.vn/media/2rbbcpzs/opportunity_tcm89-24617_w1024_n.png" alt="" class="img-link2">
+                    </a>
+                </div>
+                <div class="content--mobile">
+                    <div class="content-text--mobile">
+                        <h2 class="slogan">CƠ HỘI</h2>
+                        <p class="text">Không chỉ là nhân viên, mà còn là cộng sự.</p>
+                        <a href="https://www.starbucks.vn/ve-chung-toi/co-hoi-nghe-nghiep/" class="link-info">Tham gia cùng chúng tôi >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="footer-top">
+                <div class="footer-top-icon">
+                    <a href="https://www.facebook.com/phuthinh.phan.75470" class="facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+    
+                    <a href="https://www.instagram.com/bibabiboo.28_/" class="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-body">
+                <div class="body body-1">
+                    <h4 class="footer--head footer-body--color">VỀ CHÚNG TÔI</h4>
+                    <ul class="remove-style-list">
+                        <li class="">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/ve-chung-toi/di-san/">Di sản</a>
+                        </li>
+                        <li class="">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/">Công ty</a>
+                        </li>
+                        <li class="">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/ve-chung-toi/co-hoi-nghe-nghiep/">Cơ hội nghề nghiệp</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body body-2">
+                    <h4 class="footer--head">
+                        <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/dich-vu-khach-hang/">DỊCH VỤ KHÁCH HÀNG</a>
+                    </h4>
+                    <ul class="remove-style-list">
+                        <li class="question">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/dich-vu-khach-hang/cau-hoi-thuong-gap/">Câu hỏi Thường Gặp</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body body-3">
+                    <h4 class="footer--head footer-body--color">LIÊN KẾT NHANH</h4>
+                    <ul class="remove-style-list">
+                        <li class="">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/store-locator/">Bộ định vị Cửa hàng</a>
+                        </li>
+                        <li class="">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.com/account/partneracct/idmlogin">Dành cho Đối tác</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- footer-body-mobile -->
+            <div class="footer-body--mobile">
+                <div class="body--mobile body-1">
+                    <h4 class="footer--head footer-body--color">
+                        VỀ CHÚNG TÔI
+                        <label for="footer-list-1">
+                            <div class="float-right">
+                                <img class="img-footer-body" src="https://www.starbucks.vn/assets/images/down-chevron.png" alt="">
+                            </div>
+                        </label>
+                    </h4>
+                    <input type="checkbox" class="footer-list-checked" hidden name="" id="footer-list-1">
+                    <ul class="remove-style-list footer-list--mobile">
+                        <li class="margin-bottom-20px">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/ve-chung-toi/di-san/">Di sản</a>
+                        </li>
+                        <li class="margin-bottom-20px">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/">Công ty</a>
+                        </li>
+                        <li class="margin-bottom-20px">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/ve-chung-toi/co-hoi-nghe-nghiep/">Cơ hội nghề nghiệp</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body--mobile body-2">
+                    <h4 class="footer--head">
+                        <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/dich-vu-khach-hang/">DỊCH VỤ KHÁCH HÀNG</a>
+                        <label for="footer-list-2">
+                            <div class="float-right">
+                                <img class="img-footer-body" src="https://www.starbucks.vn/assets/images/down-chevron.png" alt="">
+                            </div>
+                        </label>
+                    </h4>
+                    <input type="checkbox" class="footer-list-checked" hidden name="" id="footer-list-2">
+                    <ul class="remove-style-list footer-list--mobile">
+                        <li class="question margin-bottom-20px">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/dich-vu-khach-hang/cau-hoi-thuong-gap/">Câu hỏi Thường Gặp</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body--mobile body-3">
+                    <h4 class="footer--head footer-body--color">
+                        LIÊN KẾT NHANH
+                        <label for="footer-list-3">
+                            <div class="float-right">
+                                <img class="img-footer-body" src="https://www.starbucks.vn/assets/images/down-chevron.png" alt="">
+                            </div>
+                        </label>
+                    </h4>
+                    <input type="checkbox" class="footer-list-checked" hidden name="" id="footer-list-3">
+                    <ul class="remove-style-list footer-list--mobile">
+                        <li class="margin-bottom-20px">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.vn/store-locator/">Bộ định vị Cửa hàng</a>
+                        </li>
+                        <li class="margin-bottom-20px">
+                            <a class="remove-underline footer-body--color footer-body--hover" href="https://www.starbucks.com/account/partneracct/idmlogin">Dành cho Đối tác</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="language">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img class="flagVN" src="https://www.starbucks.vn/assets/images/VietNam_tcm89-24771_w1024_n.png"  alt="">
+                            </a>
+                        </li>
+                        
+                        <li class="padding-8px">>></li>
+
+                        <li class="color-666">|</li>
+                        
+                        <li class="padding-8px-16px">Tiếng Việt (VN)</li>
+
+                        <li class="">
+                            <a class="font-weight remove-underline" href="https://en.starbucks.vn/">English</a>
+                        </li>
+
+                        <li style="font-size: 13px;">>></li>
+                    </ul>
+                </div>
+                
+                <div class="info-others">
+                    <ul>
+                        <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/kha-nang-truy-cap-web/">
+                            <li>Khả năng truy cập Web</li>
+                        </a>
+                        <li>|</li>
+                        <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/chi-nh-sa-ch-ba-o-ma-t-thong-tin/">
+                            <li>Chính Sách Bảo Mật Thông Tin</li>
+                        </a>
+                        <li>|</li>
+                        <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/dieu-khoan-su-dung/">
+                            <li>Điều khoản Sử dụng</li>
+                        </a>
+                        <li>|</li>
+                        <a class="remove-underline" href="https://www.starbucks.vn/site-map/">
+                            <li>Sơ đồ Trang web</li>
+                        </a>
+                        <li>|</li>
+                        <a class="remove-underline" href="#">
+                            <li>Tùy Chọn Cookie</li>
+                        </a>
+                    </ul>
+                </div>
+
+                <!-- info-others-mobile -->
+                <div class="info-others--mobile">
+                    <ul>
+                        <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/kha-nang-truy-cap-web/">
+                            <li>Khả năng truy cập Web</li>
+                        </a>
+                        <li></li>
+                        <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/chi-nh-sa-ch-ba-o-ma-t-thong-tin/">
+                            <li>Chính Sách Bảo Mật Thông Tin</li>
+                        </a>
+                        <li></li>
+                        <a class="remove-underline" href="https://www.starbucks.vn/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/dieu-khoan-su-dung/">
+                            <li>Điều khoản Sử dụng</li>
+                        </a>
+                        <li></li>
+                        <a class="remove-underline" href="https://www.starbucks.vn/site-map/">
+                            <li>Sơ đồ Trang web</li>
+                        </a>
+                        <li></li>
+                        <a class="remove-underline" href="#">
+                            <li>Tùy Chọn Cookie</li>
+                        </a>
+                    </ul>
+                </div>
+
+                <div class="info-production">
+                    <p>© 2024 Starbucks Coffee Company. Mọi quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = () =>{
+            const Loader = document.querySelector('.loader');
+
+            Loader.classList.add('loader--hidden');
+
+            Loader.addEventListener('transitionend', () =>{
+                document.body.removeChild(Loader);
+            })
+        };
+
+        
+    </script>
+
+</body>
+</html>

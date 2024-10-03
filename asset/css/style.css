@@ -1,0 +1,540 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Thuoc tinh chung */
+.remove-underline{
+    text-decoration: none;
+    color: #fff;
+}
+
+.remove-style-list{
+    list-style-type: none;
+}
+
+.opacity-1{
+    opacity: 1 !important;
+    font-weight: bold;
+}
+
+.footer-body--hover:hover{
+    opacity: 0.7;
+}
+
+.footer-body--color{
+    color: #3d3935;
+}
+
+.margin-bottom-24px{
+    margin-bottom: 24px;
+}
+
+.margin-bottom-20px{
+    margin-bottom: 20px;
+}
+
+.padding-bottom-12px{
+    padding-bottom: 12px;
+}
+
+.clear{
+    clear: both;
+}
+
+.col-second{
+    width: 50%;
+}
+
+.float-right{
+    float: right;
+}
+
+
+.loaded{
+    display: flex;
+}
+
+/*  */
+#decorate{
+    background-color: #006341;
+    height: 10px;
+}
+
+#header{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 12px;
+}
+
+.logo{
+    padding: 16px 16px 0 16px;
+}
+
+.logo-starbucks{
+    width: 56px;
+}
+
+.logo-location{
+    width: 14px;
+    color: #fff;
+    display: block;
+    margin-right: 11px;
+}
+
+.location-item{
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+.text-location{
+    font-size: 15px;
+    color: #000;
+    opacity: 0.8;
+}
+
+#nav-menu{
+    margin-top: 8px;
+    width: 100%;
+    padding-left: 24px;
+    margin-left: 32px;
+    position: relative;
+}
+
+.nav-list > li{
+    display: inline-block;
+    list-style: none;
+}
+
+.nav-list > li >a{
+    color: #242221;
+    padding: 12px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.nav-list > li:hover > a{
+    background-color: #1e1e1e;
+    color: #fff;
+    cursor: pointer;
+}
+
+.content-img .img{
+    width: 100%;
+    margin-top: 12px;
+}
+
+.content-text{
+    display: flex;
+    padding: 70px 15px;
+    align-items: center;
+}
+
+.content-left{
+    width: 50%;
+    padding-left: 50px;
+    line-height: 1.5;
+}
+
+.text{
+    margin-top: 18px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.link-info{
+    color: #000;
+    font-weight: bold;
+}
+
+.content-right{
+    width: 50%;
+}
+
+.img-link1,
+.content-right-text{
+    margin-left: 60px;
+}
+
+.content-right .img-link1{
+    float: right;
+    padding-right: 50px;
+    
+}
+
+.content-relative{
+    position: relative;
+}
+
+
+.content-left-text, .content-right-text{
+    text-align: justify;
+}
+
+.content-right .content-right-text{
+    float: right;
+    padding-right: 50px;
+    margin-right: 100px;
+}
+
+.content-right-text{
+    line-height: 1.5;
+}
+
+
+.img-link1, .img-link2{
+    max-width: 100%;
+    height: auto;
+}
+
+.footer-top{
+    padding: 35px 0 35px 24px;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-bottom: 2px solid #fff;
+}
+
+.facebook, .instagram{
+    font-size: 32px;
+    color: #3d3935;
+}
+
+.facebook{
+    margin-right: 16px;
+}
+
+.footer-top-icon{
+    margin-bottom: 8px;
+}
+
+.footer-top-icon > a{
+    text-decoration: none;
+}
+
+.footer-body{
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.body{
+    margin: 40px 0;
+    text-align: left;
+    line-height: 2;
+}
+
+.body-1{
+    padding-left: 32px;
+    min-width: 154px;
+}
+
+.body-1 .margin-bottom{
+    margin-bottom: 24px;
+}
+
+.body-2{
+    padding: 0 32px;
+}
+
+.footer--head{
+    margin-right: 12px;
+    padding: 18px 0;
+}
+
+.footer-bottom{
+    background-color: rgba(0, 0, 0, 0.05);
+    
+}
+
+.language li{
+    display: inline-block;
+}
+
+
+.language .padding-8px{
+    padding: 0 8px;
+    font-size: 13px;
+}
+
+.language .color-666{
+    color: #666;
+}
+
+.language .padding-8px-16px{
+    padding-left: 8px;
+    padding-right: 16px;
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.language .font-weight{
+    color: #382f2d;
+    font-weight: 700;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.info-others, .info-production{
+    padding: 20px 0 20px 24px;
+}
+
+.info-others li{
+    display: inline-block;
+    color: #666;
+    font-size: 14px;
+}
+
+.container-subnav{
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background-color: #1e1e1e;
+    font-weight: 100;
+    font-size: 14px;
+    width: 100%;
+    padding: 24px 32px 32px 32px;
+    display: none;
+    margin-left: -32px;
+}
+
+
+.container-subnav li a{
+    opacity: 0.8;
+}
+
+
+.row-1{
+    display: flex ;
+}
+
+.row-2{
+    display: flex;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6{
+    margin-left: 16px;
+    margin-right: 16px;
+    line-height: 1.5;
+    width: calc(100% / 6.5);
+}
+
+.make-color{
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav-list li:hover .container-subnav{
+    display: block;
+}
+
+.row-3{
+    border-top: 1px solid #ccc;
+    width: 75%;
+}
+
+.row-3 h3{
+    color: rgba(255, 255, 255, 0.9);
+    padding: 12px 12px 12px 0;
+}
+
+.row-3 p a{
+    font-weight: 700;
+}
+
+.container-subnav li a:hover,
+.container-subnav .row-3 p a:hover,
+.img-ca-phe:hover{
+    background-color: #2a8a15;
+}
+
+.img-ca-phe{
+    max-width: 150px;
+    padding: 8px 12px 8px 6px;
+}
+
+
+.img-ca-phe .img-heading{
+    color: #fff;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 12px;
+} 
+
+.img-ca-phe .img-text{
+    color: #fff;
+}
+
+.background-img{
+    background-image: url('https://www.starbucks.vn/assets/images/pattern_stars.png');
+    min-width: 20%;
+    padding-top: 20px;
+    padding-left: 24px;
+    margin-right: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+.background-img-1{
+    padding-bottom: 215px;
+}
+
+.background-img-2{
+    padding-bottom: 45px;
+}
+
+.background-img-3{
+    padding-bottom: 20px;
+}
+
+.background-img-4{
+    padding-bottom: 16px;
+}
+
+.background-img-5{
+    padding-bottom: 25px;
+}
+
+.background-img-6{
+    padding-bottom: 30px;
+}
+
+/* mobile */
+
+#nav-mobile--menu{
+    display: flex;
+    margin-right: 25px;
+    font-size: 25px;
+    flex-direction: row-reverse;
+}
+
+#nav-mobile--menu .nav-menu--mobile{
+    color: #006341;
+    padding: 6px;
+}
+
+#nav-mobile--menu .logo-location{
+    margin-right: 12px;
+}
+
+
+.nav-menu--mobile:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.nav-mobile--list{
+    display: none;
+    width: 100%;
+    background-color: #000;
+    font-size: 1em;
+    padding: 20px 0;
+    letter-spacing: 2px;
+    opacity: 0.9;
+    animation: fadein ease 0.3s;
+}
+
+.container-mobile li{
+    padding: 12px 24px;
+}   
+
+.nav-col-1{
+    float: left;
+}
+
+.nav-col-2{
+    float: right;
+}
+
+.container-mobile li:hover{
+    background: #272727;
+    cursor: pointer;
+}
+
+.nav-menu-checked:checked ~ .nav-mobile--list{
+    display: block;
+}
+
+@keyframes fadein{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(10%);
+    }
+}
+
+/* content-mobile */
+.content--mobile{
+    padding: 20px;
+}
+
+.content-img--moble,
+.content-text--mobile{
+    text-align: center;
+}
+
+/* footer-body-mobile */
+.footer-body--mobile{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.footer-list--mobile{
+    display: none;
+    animation: fadein ease 0.3s;
+}
+
+.body--mobile.body-1,
+.body--mobile.body-2,
+.body--mobile.body-3{
+    border-bottom: 1px solid #ccc;
+}
+
+.body--mobile.body-2{
+    padding-right: 0;
+}
+
+.body--mobile.body-3{
+    padding-left: 32px;
+}
+
+.img-footer-body{
+    width: 12px;
+    height: 12px;
+}
+
+.img-footer-body:hover{
+    cursor: pointer;
+}
+
+.footer-list-checked:checked ~ .footer-list--mobile{
+    display: block; 
+}
+
+/* footer-bottom--mobile */
+.info-others--mobile li{
+    color: #333;
+    padding-left: 24px;
+    font-size: 14px;
+}
+
+.info-others--mobile li:hover{
+    opacity: 0.6;
+}
+
