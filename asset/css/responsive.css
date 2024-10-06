@@ -7,6 +7,127 @@
         display: none;
     }
 
+    #nav-mobile--menu{
+        display: flex;
+        margin-right: 25px;
+        font-size: 25px;
+        flex-direction: row-reverse;
+    }
+    
+    #nav-mobile--menu .nav-menu--mobile{
+        color: #006341;
+        padding: 6px;
+    }
+    
+    #nav-mobile--menu .logo-location{
+        margin-right: 8px;
+    }
+    
+    
+    .nav-menu--mobile:hover{
+        opacity: 0.7;
+        cursor: pointer;
+    }
+    
+    .nav-mobile--list{
+        display: none;
+        width: 100%;
+        background-color: #000;
+        font-size: 1em;
+        padding: 20px 0;
+        letter-spacing: 2px;
+        opacity: 0.9;
+        animation: fadein ease 0.3s;
+    }
+    
+    .container-mobile li{
+        padding: 12px 24px;
+    }   
+    
+    .nav-col-1{
+        float: left;
+    }
+    
+    .nav-col-2{
+        float: right;
+    }
+    
+    .container-mobile li:hover{
+        background: #272727;
+        cursor: pointer;
+    }
+    
+    .nav-menu-checked:checked ~ .nav-mobile--list{
+        display: block;
+    }
+    
+    @keyframes fadein{
+        from{
+            transform: translateY(0);
+        }
+        to{
+            transform: translateY(10%);
+        }
+    }
+    
+    /* content-mobile */
+    .content--mobile{
+        padding: 20px;
+    }
+    
+    .content-img--moble,
+    .content-text--mobile{
+        text-align: center;
+    }
+    
+    /* footer-body-mobile */
+    .footer-body--mobile{
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .footer-list--mobile{
+        display: none;
+        animation: fadein ease 0.3s;
+    }
+    
+    .body--mobile.body-1,
+    .body--mobile.body-2,
+    .body--mobile.body-3{
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .body--mobile.body-2{
+        padding-right: 0;
+    }
+    
+    .body--mobile.body-3{
+        padding-left: 32px;
+    }
+    
+    .img-footer-body{
+        width: 12px;
+        height: 12px;
+    }
+    
+    .img-footer-body:hover{
+        cursor: pointer;
+    }
+    
+    .footer-list-checked:checked ~ .footer-list--mobile{
+        display: block; 
+    }
+    
+    /* footer-bottom--mobile */
+    .info-others--mobile li{
+        color: #333;
+        padding-left: 24px;
+        font-size: 14px;
+    }
+    
+    .info-others--mobile li:hover{
+        opacity: 0.6;
+    }
+
     .language{
         padding: 8px 24px 16px 24px;
     }
@@ -22,7 +143,8 @@
     #nav-mobile--menu,
     .content--mobile,
     .footer-body--mobile,
-    .info-others--mobile{
+    .info-others--mobile,
+    .nav-mobile--list{
         display: none;
     }
 
@@ -33,5 +155,9 @@
     .info-production{
         font-size: 10px;
         color: #666;
+    }
+
+    .location-item .logo-location {
+        margin-right: 6px;
     }
 }
